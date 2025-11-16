@@ -1,7 +1,6 @@
 {
-  "buildCommand": "npm run build",
-  "installCommand": "npm install",
-  "framework": "nextjs",
-  "rootDirectory": "safe-messaging-poc"
+  "buildCommand": "cd safe-messaging-poc && npm run build",
+  "installCommand": "cd safe-messaging-poc && npm install",
+  "framework": "nextjs"
 }
 
