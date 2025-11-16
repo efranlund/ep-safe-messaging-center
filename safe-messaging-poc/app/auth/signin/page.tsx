@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -8,6 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Shield, Mail } from 'lucide-react';
 
 export default function SignInPage() {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
@@ -16,14 +18,14 @@ export default function SignInPage() {
     e.preventDefault();
     setIsLoading(true);
     
-    // For demo purposes, simulate email sending
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // For demo purposes, skip email sending and redirect to onboarding
+    await new Promise(resolve => setTimeout(resolve, 500));
     
     // In production, this would trigger NextAuth email provider
     // await signIn('email', { email, redirect: false });
     
-    setEmailSent(true);
-    setIsLoading(false);
+    // Redirect to onboarding for demo purposes
+    router.push('/auth/onboarding');
   };
 
   const handleGoogleSignIn = () => {
