@@ -1,6 +1,0 @@
-{
-  "buildCommand": "cd safe-messaging-poc && npm run build",
-  "installCommand": "cd safe-messaging-poc && npm install",
-  "framework": "nextjs"
-}
-
