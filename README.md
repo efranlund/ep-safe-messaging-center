@@ -19,7 +19,10 @@ This project is configured for automatic deployment to Vercel when pushing to th
    - Go to [Vercel Dashboard](https://vercel.com/dashboard)
    - Click "Add New Project"
    - Import the `ep-safe-messaging-center` repository
-   - Vercel will automatically detect the Next.js app in the `safe-messaging-poc` subdirectory
+   - **Important:** Before deploying, click "Configure Project" and set:
+     - **Root Directory:** `safe-messaging-poc`
+   - This tells Vercel where your Next.js app is located
+   - Vercel will automatically detect Next.js framework settings
 
 2. **Configure Environment Variables:**
    - In the Vercel project settings, go to "Environment Variables"
@@ -37,10 +40,10 @@ This project is configured for automatic deployment to Vercel when pushing to th
 
 ### Configuration
 
-The `vercel.json` file at the root configures Vercel to:
-- Use `safe-messaging-poc` as the root directory
-- Run build commands from that directory
-- Automatically detect Next.js framework settings
+The root directory is configured in Vercel's project settings:
+- Set **Root Directory** to `safe-messaging-poc` in the project settings
+- Vercel will automatically detect Next.js framework settings
+- Build and install commands will run from the `safe-messaging-poc` directory
 
 ## 🛠️ Local Development
 
