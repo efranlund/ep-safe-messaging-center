@@ -147,8 +147,6 @@ export default function DashboardPage() {
                             {notificationSettings.dailySummary && 'Daily summaries'}
                             {notificationSettings.dailySummary && notificationSettings.newConversations && ' • '}
                             {notificationSettings.newConversations && 'New conv.'}
-                            {(notificationSettings.dailySummary || notificationSettings.newConversations) && notificationSettings.urgentMessages && ' • '}
-                            {notificationSettings.urgentMessages && 'Urgent'}
                           </span>
                         </div>
                       )}

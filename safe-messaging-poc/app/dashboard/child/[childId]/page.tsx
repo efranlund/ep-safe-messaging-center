@@ -52,7 +52,6 @@ export default function ChildConversationsPage() {
       childId,
       dailySummary: true,
       newConversations: true,
-      urgentMessages: false,
     }
   );
   
@@ -86,7 +85,7 @@ export default function ChildConversationsPage() {
     }
   };
 
-  const handleNotificationToggle = (setting: 'dailySummary' | 'newConversations' | 'urgentMessages') => {
+  const handleNotificationToggle = (setting: 'dailySummary' | 'newConversations') => {
     const newSettings = {
       ...notificationSettings,
       [setting]: !notificationSettings[setting],
@@ -200,7 +199,7 @@ export default function ChildConversationsPage() {
                       </div>
 
                       {/* New Conversations */}
-                      <div className="flex items-start justify-between gap-4 py-3 border-b">
+                      <div className="flex items-start justify-between gap-4 py-3">
                         <div className="flex-1">
                           <Label htmlFor="new-conversations" className="text-sm font-medium cursor-pointer">
                             New Conversations
@@ -213,23 +212,6 @@ export default function ChildConversationsPage() {
                           id="new-conversations"
                           checked={notificationSettings.newConversations}
                           onCheckedChange={() => handleNotificationToggle('newConversations')}
-                        />
-                      </div>
-
-                      {/* Urgent Messages */}
-                      <div className="flex items-start justify-between gap-4 py-3">
-                        <div className="flex-1">
-                          <Label htmlFor="urgent-messages" className="text-sm font-medium cursor-pointer">
-                            Urgent Messages
-                          </Label>
-                          <p className="text-xs text-muted-foreground mt-1">
-                            Real-time alerts for messages marked as urgent
-                          </p>
-                        </div>
-                        <Switch
-                          id="urgent-messages"
-                          checked={notificationSettings.urgentMessages}
-                          onCheckedChange={() => handleNotificationToggle('urgentMessages')}
                         />
                       </div>
                     </div>
